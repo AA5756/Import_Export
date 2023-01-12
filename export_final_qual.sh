@@ -9,12 +9,7 @@ read -p "Enter Robot Serial Number: " serial
 read -p "Enter Four Digit Robot Number: " number
 read -p "Enter Lastpass Password: " password
 
-#password="Enter Lastpass Password for $serial"
 echo $serial
-echo "------------------copy from local to remote----------------"
-
-#-----------------create directory at remote home location----------------
-#sshpass -p "$password" ssh $serial mkdir -p /home/fetch/$number
 
 #-----------------copy from local home directory to remote home directory----------------
 sshpass -p "$password" scp -o StrictHostKeyChecking=no /home/fetch/$number/calibrated_urdf.urdf $serial:/home/fetch
